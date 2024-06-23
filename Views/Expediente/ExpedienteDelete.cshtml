@@ -1,0 +1,14 @@
+@model ExpedienteModel
+@{
+    ViewData["Title"] = "Borrar Expediente";
+
+}
+
+<div class="mb-3">
+    ¿Estas seguro que deseas borrar el Expediente?
+</div>
+
+<form asp-controller="Expediente" asp-action="ExpedienteDelete">
+    <button type="summit" class="btn btn-danger" asp-action="ExpedienteDelete" asp-controller="Expediente">Borrar</button>
+    <a asp-controller="Expediente" asp-action="ExpedienteList" class="btn btn-secundary">Regresar</a>
+</form>

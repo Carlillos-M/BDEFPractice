@@ -18,24 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ialda\OneDrive\Documentos\UN CEMR\6. SEXTO TETRA\3. POO II\2do Parcial\CRUDProductCatalog
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Expediente/ExpedienteAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZWRpZW50ZVxFeHBlZGllbnRlQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Expediente/ExpedienteDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZWRpZW50ZVxFeHBlZGllbnRlRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Expediente/ExpedienteEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZWRpZW50ZVxFeHBlZGllbnRlRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Expediente/ExpedienteList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZWRpZW50ZVxFeHBlZGllbnRlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Home/StudentAdd.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50QWRkLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Home/StudentDelete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50RGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Home/StudentEdit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50RWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ialda/OneDrive/Documentos/UN CEMR/6. SEXTO TETRA/3. POO II/2do Parcial/CRUDProductCatalog/Views/Patient/PatientAdd.cshtml]

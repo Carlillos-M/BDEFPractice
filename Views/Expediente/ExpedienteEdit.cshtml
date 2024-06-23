@@ -1,0 +1,43 @@
+@model ExpedienteModel
+
+@{
+    ViewData["Title"] = "Agregar Expediente";
+    
+}
+
+<div class="text-center">
+    <h1 class="display-2">Agregar Expediente</h1>  
+</div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-controller="Expediente" asp-action="ExpedienteEdit">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" asp-for="Name" placeholder="Escriba el Nombre del Paciente" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" asp-for="LastName" placeholder="Escriba los Apellidos del Paciente" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label">Descripcion de la Consulta</label>
+        <input type="text" class="form-control" asp-for="Description" placeholder="Describa su consulta" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Diagnostic" class="form-label">Diagnostico</label>
+        <input type="text" class="form-control" asp-for="Diagnostic" placeholder="Escriba el Diagnostico" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DiagnosticDate" class="form-label">Fecha de Diagnostico</label>
+        <input type="text" class="form-control" asp-for="DiagnosticDate" placeholder="Escriba la fecha de consulta" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-controller="Expediente" asp-action="ExpedienteList" class="btn btn-secundary mb-3">Regresar</a>
+</form>

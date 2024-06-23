@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUDProductCatalog.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240610054051_CrearRelacionPacienteEspecialista")]
-    partial class CrearRelacionPacienteEspecialista
+    [Migration("20240623175649_CrearTablasPatientsSpecialistsExpedientes")]
+    partial class CrearTablasPatientsSpecialistsExpedientes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,32 @@ namespace CRUDProductCatalog.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CRUDProductCatalog.Entities.Expediente", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Diagnostic")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DiagnosticDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Expedientes");
+                });
+
             modelBuilder.Entity("CRUDProductCatalog.Entities.Patient", b =>
                 {
                     b.Property<Guid>("Id")
@@ -35,7 +61,6 @@ namespace CRUDProductCatalog.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
@@ -44,12 +69,7 @@ namespace CRUDProductCatalog.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("SpecialistId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("SpecialistId");
 
                     b.ToTable("Patients");
                 });
@@ -64,7 +84,6 @@ namespace CRUDProductCatalog.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Major")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -73,45 +92,6 @@ namespace CRUDProductCatalog.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Specialists");
-                });
-
-            modelBuilder.Entity("CRUDProductCatalog.Entities.Student", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("Cuota")
-                        .HasColumnType("float");
-
-                    b.Property<string>("LastName")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<int>("Tetra")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("CRUDProductCatalog.Entities.Patient", b =>
-                {
-                    b.HasOne("CRUDProductCatalog.Entities.Specialist", "Specialist")
-                        .WithMany("Patients")
-                        .HasForeignKey("SpecialistId");
-
-                    b.Navigation("Specialist");
-                });
-
-            modelBuilder.Entity("CRUDProductCatalog.Entities.Specialist", b =>
-                {
-                    b.Navigation("Patients");
                 });
 #pragma warning restore 612, 618
         }

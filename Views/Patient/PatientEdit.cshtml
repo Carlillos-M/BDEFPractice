@@ -28,13 +28,9 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="Birth" class="form-label">Cuota</label>
+        <label asp-for="Birth" class="form-label">Fecha de Nacimiento</label>
         <input type="text" class="form-control" asp-for="Birth" placeholder="Escriba su fecha de naciemiento" />
     </div>
-
-    <select class="form-select mb-3" asp-for="SpecialistId" asp-items="@Model.SpecialistL">
-        <option>Seleccionar Categoria</option>
-    </select>
 
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a asp-controller="Patient" asp-action="PatientList" class="btn btn-secundary mb-3">Regresar</a>

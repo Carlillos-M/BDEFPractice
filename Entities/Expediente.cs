@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CRUDProductCatalog.Models
+namespace CRUDProductCatalog.Entities
 {
-    public class StudentModel
+    public class Expediente
     {
-        public StudentModel()
-        {
-        }
 
         public Guid Id { get; set; }
         public string? Name { get; set; }
         public string? LastName { get; set; }
-        public int Tetra { get; set; }
-        public double Cuota { get; set; }
+        public string? Description { get; set; }
+        public string? Diagnostic { get; set; }
+        public DateTime DiagnosticDate { get; set; }
     }
 }

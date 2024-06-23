@@ -1,0 +1,47 @@
+@model List<ExpedienteModel>
+@{
+    ViewData["Title"] = "Expediente";
+    int numero = 0;
+    
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<h1>Lista de Expediente de Pacietes</h1>
+<a class="btn btn-outline.primary" asp-action="ExpedienteAdd" asp-asp-controller="Expediente">Agregar Expediente</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Paciente</th>
+            <th scope="col">Apellidos Paciente</th>
+            <th scope="col">Descripcion Clinica</th>
+            <th scope="col">Diagnostico</th>
+            <th scope="col">Fecha de Consulta</th>
+            
+            </tr>
+    </thead>
+    
+    <tbody>
+        @foreach( var expediente in Model )
+        {
+        {
+            numero++;
+        }
+
+         <tr>
+            <th scope="row">@numero</th>
+            <td>@expediente.Name</td>
+            <td>@expediente.LastName</td>
+            <td>@expediente.Description</td>
+            <td>@expediente.Diagnostic</td>
+            <td>@expediente.DiagnosticDate.ToShortDateString()</td>
+            <td>
+                <a class="btn btn-outline-info" asp-action="ExpedienteEdit" asp-controller="Expediente" asp-route-id="@expediente.Id">Editar</a>
+                <a class="btn btn-outline-danger" asp-action="ExpedienteDelete" asp-controller="Expediente" asp-route-id="@expediente.Id">Borrar</a>
+            </td>
+         </tr>
+        }     
+    </tbody>
+</table>

@@ -10,8 +10,8 @@ namespace CRUDProductCatalog
 
         }
 
-        public DbSet<Student> Students { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Specialist> Specialists { get; set; }
+        public DbSet<Expediente> Expedientes { get; set; }
     }
 }

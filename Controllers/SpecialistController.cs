@@ -39,7 +39,6 @@ namespace CRUDProductCatalog.Controllers
             return View();
         }
 
-
         [HttpPost]
         public IActionResult SpecialistAdd(SpecialistModel model)
         {
