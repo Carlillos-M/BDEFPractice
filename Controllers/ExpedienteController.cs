@@ -156,6 +156,5 @@ namespace CRUDProductCatalog.Controllers
 
             return RedirectToAction("ExpedienteList", "Expediente");
         }
-
     }
 }

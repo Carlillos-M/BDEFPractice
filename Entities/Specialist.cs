@@ -12,5 +12,7 @@ namespace CRUDProductCatalog.Entities
         public string? LastName { get; set; }
         public string? Major { get; set; }
 
+        public List<Patient> Patients { get; set; }
+
     }
 }

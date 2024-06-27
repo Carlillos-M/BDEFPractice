@@ -14,5 +14,7 @@ namespace CRUDProductCatalog.Entities
         public string? Description { get; set; }
         public string? Diagnostic { get; set; }
         public DateTime DiagnosticDate { get; set; }
+
+        public List<Patient> Patients { get; set; }
     }
 }

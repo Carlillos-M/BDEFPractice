@@ -29,7 +29,11 @@ namespace CRUDProductCatalog.Controllers
                 Name = paciente.Name,
                 LastName = paciente.LastName,
                 Email = paciente.Email,
-                Birth = paciente.Birth,         
+                Birth = paciente.Birth,      
+
+
+                
+                   
             }).ToList();
 
             return View(list);

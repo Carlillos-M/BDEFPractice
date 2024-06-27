@@ -14,6 +14,12 @@ namespace CRUDProductCatalog.Entities
         public string? Email { get; set; }
         public DateTime Birth { get; set; }
 
-        
+        public Guid? SpecialistId { get; set; }
+
+        public Specialist? Specialist{ get; set; }
+
+        public Guid? ExpedienteId { get; set;}
+
+        public Expediente? Expediente { get; set;}
     }
 }
