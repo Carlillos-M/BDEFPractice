@@ -17,6 +17,10 @@
             <th scope="col">Apellido</th>
             <th scope="col">Correo</th>
             <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Nombre Especialista</th>
+            @* <th scope="col">Apellido Especialista</th>
+            <th scope="col">Especialidad</th> *@
+            <th scope="col">Diagnostico</th>
             </tr>
     </thead>
     
@@ -32,7 +36,11 @@
             <td>@patient.Name</td>
             <td>@patient.LastName</td>
             <td>@patient.Email</td>
-            <td>@patient.Birth.ToShortDateString()</td>
+            <td>@patient.Birth</td>
+            <td>@patient.SpecialistName
+            @patient.SpecialistLastName
+            @patient.SpecialistMajor</td>
+            <td>@patient.ExpedienteDiagnostic</td>
             <td>
                 <a class="btn btn-outline-info" asp-action="PatientEdit" asp-controller="Patient" asp-route-id="@patient.Id">Editar</a>
                 <a class="btn btn-outline-danger" asp-action="PatientDelete" asp-controller="Patient" asp-route-id="@patient.Id">Borrar</a>

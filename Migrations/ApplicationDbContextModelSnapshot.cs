@@ -60,13 +60,23 @@ namespace CRUDProductCatalog.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("ExpedienteId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("SpecialistId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ExpedienteId");
+
+                    b.HasIndex("SpecialistId");
 
                     b.ToTable("Patients");
                 });
@@ -89,6 +99,31 @@ namespace CRUDProductCatalog.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Specialists");
+                });
+
+            modelBuilder.Entity("CRUDProductCatalog.Entities.Patient", b =>
+                {
+                    b.HasOne("CRUDProductCatalog.Entities.Expediente", "Expediente")
+                        .WithMany("Patients")
+                        .HasForeignKey("ExpedienteId");
+
+                    b.HasOne("CRUDProductCatalog.Entities.Specialist", "Specialist")
+                        .WithMany("Patients")
+                        .HasForeignKey("SpecialistId");
+
+                    b.Navigation("Expediente");
+
+                    b.Navigation("Specialist");
+                });
+
+            modelBuilder.Entity("CRUDProductCatalog.Entities.Expediente", b =>
+                {
+                    b.Navigation("Patients");
+                });
+
+            modelBuilder.Entity("CRUDProductCatalog.Entities.Specialist", b =>
+                {
+                    b.Navigation("Patients");
                 });
 #pragma warning restore 612, 618
         }

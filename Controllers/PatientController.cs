@@ -19,59 +19,89 @@ namespace CRUDProductCatalog.Controllers
             _context = context;
         }
 
-        public IActionResult PatientList()
+        public async Task<IActionResult> PatientList()
         {
 
-            List<PatientModel> list = new List<PatientModel>();
-            list = _context.Patients.Select(paciente => new PatientModel()
+            List<PatientModel> patients
+            = await _context.Patients
+            .Include(s => s.Specialist)
+            .Include(e => e.Expediente)
+            .Select(paciente => new PatientModel()
             {
                 Id = paciente.Id,
                 Name = paciente.Name,
                 LastName = paciente.LastName,
                 Email = paciente.Email,
-                Birth = paciente.Birth,      
+                Birth = paciente.Birth,
+                SpecialistName = paciente.Specialist.Name,
+                SpecialistLastName = paciente.Specialist.LastName,
+                SpecialistMajor = paciente.Specialist.Major,
+                ExpedienteDiagnostic = paciente.Expediente.Diagnostic,
+            }).ToListAsync();
 
-
-                
-                   
-            }).ToList();
-
-            return View(list);
+            return View(patients);
 
         }
 
         [HttpGet]
-        public IActionResult PatientAdd()
+        public async Task<IActionResult> PatientAdd()
         {
-            return View();
+            PatientModel patient = new PatientModel();
+
+            patient.ListaSpecialist = 
+            await _context.Specialists.Select(s => new SelectListItem()
+            {Value = s.Id.ToString(), Text = s.Name + " " + s.LastName + " " + s.Major}
+            ).ToListAsync();
+
+            patient.ListaExpediente = 
+            await _context.Expedientes.Select(e => new SelectListItem()
+            {Value = e.Id.ToString(), Text = e.Diagnostic}
+            ).ToListAsync();
+
+            return View(patient);
         }
 
         [HttpPost]
-        public IActionResult PatientAdd(PatientModel model)
+        public async Task<IActionResult> PatientAdd(PatientModel model)
         {
             //para insertar
             if (!ModelState.IsValid)
             {
+                model.ListaSpecialist =
+                await _context.Specialists.Select(s => new SelectListItem()
+                {Value = s.Id.ToString(), Text = s.Name + " " + s.LastName + " " + s.Major}
+                ).ToListAsync();
+
+                model.ListaExpediente =
+                await _context.Expedientes.Select(e => new SelectListItem()
+                {Value = e.Id.ToString(), Text = e.Diagnostic}
+                ).ToListAsync();
+            
                 return View(model);
             }
 
-            Patient p = new Patient();
-            p.Id = model.Id;
+            var p = new Patient();
+            p.Id = new Guid();
             p.Name = model.Name;
             p.LastName = model.LastName;
             p.Email = model.Email;
-            p.Birth = model.Birth;
+            if (model.Birth.HasValue)
+            {
+                p.Birth = model.Birth.Value;
+            }
+            p.SpecialistId = model.SpecialistId;
+            p.ExpedienteId = model.ExpedienteId;
 
             this._context.Patients.Add(p);
-            this._context.SaveChanges();
+            await this._context.SaveChangesAsync();
 
             return RedirectToAction("PatientList", "Patient");
         }
 
         [HttpGet]
-        public IActionResult PatientEdit(Guid Id)
+        public async Task<IActionResult> PatientEdit(Guid Id)
         {
-            Patient? paciente = this._context.Patients.Where(p => p.Id == Id).FirstOrDefault();
+            Patient? paciente = await this._context.Patients.Where(p => p.Id == Id).FirstOrDefaultAsync();
 
             if (paciente == null)
             {
@@ -79,42 +109,84 @@ namespace CRUDProductCatalog.Controllers
             }
 
             PatientModel model = new PatientModel();
-            model.Id = Id;
+            model.Id = paciente.Id;
             model.Name = paciente.Name;
             model.LastName = paciente.LastName;
             model.Email = paciente.Email;
             model.Birth = paciente.Birth;
 
+            if (paciente.SpecialistId.HasValue)
+            {
+                model.SpecialistId = paciente.SpecialistId.Value;
+            }
+
+            if (paciente.ExpedienteId.HasValue)
+            {
+                model.ExpedienteId = paciente.ExpedienteId.Value;
+            }
+
+                model.ListaSpecialist =
+                await _context.Specialists.Select(s => new SelectListItem()
+                {Value = s.Id.ToString(), Text = s.Name + " " + s.LastName + " " + s.Major}
+                ).ToListAsync();
+
+                model.ListaExpediente =
+                await _context.Expedientes.Select(e => new SelectListItem()
+                {Value = e.Id.ToString(), Text = e.Diagnostic}
+                ).ToListAsync();
+
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult PatientEdit(PatientModel model)
+        public async Task<IActionResult> PatientEdit(PatientModel model)
         {
 
-            Patient pacienteactualiza = this._context.Patients
-            .Where(p => p.Id == model.Id).First();
+            bool exists = await _context.Patients.AnyAsync(p => p.Id == model.Id);
 
-            if (pacienteactualiza == null)
+            if (!exists)
             {
-                return RedirectToAction("PatientList", "Patient");
+                return View (model);
             }
 
+            if (!ModelState.IsValid)
+            {
+                model.ListaSpecialist =
+                await _context.Specialists.Select(s => new SelectListItem()
+                {Value = s.Id.ToString(), Text = s.Name + " " + s.LastName + " " + s.Major}
+                ).ToListAsync();
+
+                model.ListaExpediente =
+                await _context.Expedientes.Select(e => new SelectListItem()
+                {Value = e.Id.ToString(), Text = e.Diagnostic}
+                ).ToListAsync();
+            
+                return View(model);
+            }
+
+            Patient pacienteactualiza = await _context.Patients
+            .Where(p => p.Id == model.Id).FirstAsync();
             pacienteactualiza.Name = model.Name;
             pacienteactualiza.LastName = model.LastName;
             pacienteactualiza.Email = model.Email;
-            pacienteactualiza.Birth = model.Birth;
+            if (model.Birth.HasValue)
+            {
+                pacienteactualiza.Birth = model.Birth.Value;
+            }
+            pacienteactualiza.SpecialistId = model.SpecialistId;
+            pacienteactualiza.ExpedienteId = model.ExpedienteId;
 
             this._context.Patients.Update(pacienteactualiza);
-            this._context.SaveChanges();
+            await this._context.SaveChangesAsync();
             return RedirectToAction("PatientList", "Patient");
         }
 
         [HttpGet]
-        public IActionResult PatientDelete(Guid Id)
+        public async Task<IActionResult> PatientDelete(Guid Id)
         {
             //borrar registro
-            Patient? pacienteborrado = this._context.Patients.Where(p => p.Id == Id).FirstOrDefault();
+            Patient? pacienteborrado = await this._context.Patients
+            .Where(p => p.Id == Id).FirstOrDefaultAsync();
 
             if (pacienteborrado == null)
             {
@@ -127,7 +199,7 @@ namespace CRUDProductCatalog.Controllers
             }
 
             PatientModel model = new PatientModel();
-            model.Id = Id;
+            model.Id = pacienteborrado.Id;
             model.Name = pacienteborrado.Name;
             model.LastName = pacienteborrado.LastName;
             model.Email = pacienteborrado.Email;
@@ -137,24 +209,20 @@ namespace CRUDProductCatalog.Controllers
         }
 
         [HttpPost]
-        public IActionResult PatientDelete(PatientModel model)
+        public async Task<IActionResult> PatientDelete(PatientModel model)
         {
-            bool exists = this._context.Patients.Any(p => p.Id == model.Id);
+            bool exists = await this._context.Patients.AnyAsync(p => p.Id == model.Id);
 
             if (!exists)
             {
-                return RedirectToAction("PatientList", "Patient");
+                return View (model);
             }
 
-            Patient pacienteborrado = this._context.Patients.Where(p => p.Id == model.Id).First();
-            pacienteborrado.Id = model.Id;
-            pacienteborrado.Name = model.Name;
-            pacienteborrado.LastName = model.LastName;
-            pacienteborrado.Email = model.Email;
-            pacienteborrado.Birth = model.Birth;
+            Patient pacienteborrado = await this._context.Patients
+            .Where(p => p.Id == model.Id).FirstAsync();
 
             this._context.Patients.Remove(pacienteborrado);
-            this._context.SaveChanges();
+            await this._context.SaveChangesAsync();
 
             return RedirectToAction("PatientList", "Patient");
         }

@@ -9,6 +9,15 @@
 </div>
 
 <form asp-controller="Patient" asp-action="PatientDelete">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Información del Producto</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">¿Está seguro que desea borrar el producto?</h6>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
     <button type="summit" class="btn btn-danger" asp-action="PatientDelete" asp-controller="Patient">Borrar</button>
     <a asp-controller="Patient" asp-action="PatientList" class="btn btn-secundary">Regresar</a>
 </form>

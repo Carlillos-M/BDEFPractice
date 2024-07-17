@@ -9,9 +9,8 @@
     <h1 class="display-2">Editar Pacientes</h1>  
 </div>
 
-<div asp-validation-summary="All" class="text-danger"></div>
-
 <form asp-controller="Patient" asp-action="PatientEdit">
+
     <div class="mb-3">
         <label asp-for="Name" class="form-label">Nombre</label>
         <input type="text" class="form-control" asp-for="Name" placeholder="Escriba el Nombre del Paciente" />
@@ -24,13 +23,35 @@
 
     <div class="mb-3">
         <label asp-for="Email" class="form-label">Correo</label>
-        <input type="text" class="form-control" asp-for="Email" placeholder="Escriba el correo electronico" />
+        <input type="text" class="form-control" asp-for="Email" placeholder="Escriba el correo Electronico" />
     </div>
 
     <div class="mb-3">
         <label asp-for="Birth" class="form-label">Fecha de Nacimiento</label>
-        <input type="text" class="form-control" asp-for="Birth" placeholder="Escriba su fecha de naciemiento" />
+        <input type="text" class="form-control" asp-for="Birth" placeholder="Escriba su Fecha de Naciemiento" />
     </div>
+
+    @* <div class="mb-3">
+        <label asp-for="SpecialistName" class="form-label">Nombre Especialista</label>
+        <input type="text" class="form-control" asp-for="SpecialistName" placeholder="Escriba el Nombre del Especialista" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SpecialistLastName" class="form-label">Apellido Especialista</label>
+        <input type="text" class="form-control" asp-for="SpecialistLastName" placeholder="Escriba el Apellido del Especialista" />
+    </div> *@
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="SpecialistId" asp-items="@Model.ListaSpecialist" >
+            <option>Selecciona el Nombre del Especialista</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="ExpedienteId" asp-items="@Model.ListaExpediente" >
+            <option>Selecciona el Diagnostico</option>
+        </select>
+    </div>   
 
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a asp-controller="Patient" asp-action="PatientList" class="btn btn-secundary mb-3">Regresar</a>
