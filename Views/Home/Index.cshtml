@@ -2,7 +2,509 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+
+  <title>Mevak-La ayuda a tu alcance</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="~/css/fontawesome.css">
+  <link rel="stylesheet" href="~/css/templatemo-scholar.css">
+  <link rel="stylesheet" href="~/css/owl.css">
+  <link rel="stylesheet" href="~/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
+
+TemplateMo 586 Scholar
+
+https://templatemo.com/tm-586-scholar
+
+-->
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="#top" class="logo">
+              <h1>Mevak</h1>
+            </a>
+            <!-- ***** Logo End ***** -->
+
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">Especialistas</a></li>
+              <li class="scroll-to-section"><a href="#team">Nosotros</a></li>
+              <li class="scroll-to-section"><a href="#courses">Videos</a></li>
+              <li class="scroll-to-section"><a href="#contact">Contacto</a></li>
+              <li class="scroll-to-section">
+                <a asp-controller="Specialist" asp-action="SpecialistList">CRUD del sistema</a>
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-banner">
+            <div class="item item-1">
+              <div class="header-text">
+                <span class="category">Bienvenidos</span>
+                <h2>Aprecia las pequeñas cosas que te da la vida</h2>
+                <p>En esta pagina encontraras el apoyo que nececitas</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a class="nav-link" href="#courses">Ir a Videos</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> Que somos en Mevak?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item item-2">
+              <div class="header-text">
+                <span class="category">Ayuda a tu alcance</span>
+                <h2>Buscas ayuda Psicologica profesional y no sabes donde?</h2>
+                <p>Comunicate con nosotros y te brindaremos toda la informacion necesaria</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="index6.html">Contacto</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item item-3">
+              <div class="header-text">
+                <span class="category">Orientacion</span>
+                <h2>Sientes que tienes problemas de Ira?</h2>
+                <p>toma esta pequeña asesoria sobre como manejar la ira en tu dia a dia</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="https://www.grupoxxi-psicologia.net/talleres-individuales/curso-dominar-enfado/">Click
+                      Aqui</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="section fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="50" data-speed="1000"></h2>
+                  <p class="count-text ">Pacientes Satisfechos</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="4" data-speed="1000"></h2>
+                  <p class="count-text ">Horas de cursos</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="20" data-speed="1000"></h2>
+                  <p class="count-text ">Apoyos Morales</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="counter end">
+                  <h2 class="timer count-title count-number" data-to="5" data-speed="1000"></h2>
+                  <p class="count-text ">Años de Experiencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services section" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="~/img/Dr. AM.jpeg" alt="online degrees">
+            </div>
+            <div class="main-content">
+              <h4>Mtra. Andrea Morales Carrillo</h4>
+              <p>Soy Andrea, Psicóloga Clínica con enfoque Cognitivo Conductual. Me interesa brindar un servicio donde los pacientes puedan ver el progreso y trabajar sobre sus objetivos. La intención es que tu salgas de aquí con herramientas que te sirvan para enfrentar las diferentes situaciones que se te presenten y te sirvan para el resto de tu vida. Trabajaremos de la mano para que las razones por las que llegaste a terapia sean correctamente abordadas.
+
+                Terapia en línea y presencial.</p>
+              <div class="main-button">
+                <a href="https://www.doctoralia.com.mx/andrea-morales-carrillo/psicologo/nuevo-leon#address-id=%5B383058%2C383076%5D&filters%5Bspecializations%5D%5B%5D=78">Mi Perfil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="~/img/Dr. RB.jpeg" alt="short courses">
+            </div>
+            <div class="main-content">
+              <h4>Lic. Rogel Bautista</h4>
+              <p>Entiendo que el ser humano tiene distintas áreas de desarrollo (física, mental, social y espiritual) las cuales pueden ser de gran reto en algunas etapas de la vida, por ello es importante saber como abordar cada área de manera oportuna y eficiente por ello me he preparado en distintos tipos de abordaje terapéutico basado en evidencia, desde las terapias cognitivas conductuales hasta las terapias de tercera generación y poder ofrecer al paciente un abordaje que necesite o poder referir al paciente hacia una intervención que sea eficaz y así poder continuar creciendo hacia el bienestar integral.</p>
+              <div class="main-button">
+                <a href="https://www.doctoralia.com.mx/rogel-bautista/psicologo/nuevo-leon#profile-experience">Mi Perfil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="~/img/Dr. SR.jpeg" alt="web experts">
+            </div>
+            <div class="main-content">
+              <h4>Lic. Sheila Rojas</h4>
+              <p>Psicóloga cognitivo-conducutal con perspectiva feminista. Con diplomados en Psicodrama, biodescodificación y psicotraumatología. Experta en intervención en crisis. Me especializo en temas de autoestima, duelos, rupturas, ansiedad, depresión, dependencia emocional, violencia y relaciones de pareja, trauma psicológico, entre otros. Creadora de cursos como "Soy el amor de mi vida" y "Desintoxicación emocional".</p>
+              <div class="main-button">
+                <a href="https://www.doctoralia.com.mx/sheila-rojas/psicologo/nuevo-leon#profile-experience">Mi Perfil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team section" id="team">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="~/img/member-01.jpg" alt="">
+              <span class="category" class="fluid">ing TI/Software</span>
+              <h4>Mariana Zavala</h4>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com/hatsune.miku.3766"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/merry_zav800?igsh=MW4yanJzb2FmaHpxZg=="><i
+                      class="fab fa-twitter"></i></a></li>
+                <li><a
+                    href="https://www.linkedin.com/in/mariana-guadalupe-gonz%C3%A1lez-zavala-bb57202b5/?originalSubdomain=mx"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="~/img/member-03.jpg" alt="">
+              <span class="category" class="fluid">ing TI/Software</span>
+              <h4>Carlos Marin</h4>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com/CarlillosMarin"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/carlillos_m26/"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="owl-carousel owl-testimonials">
+
+            <div class="item">
+              <p>“Es un placer poder ayudar a la comunidad en un tema tan importante como lo es la salud 
+                mental.”</p>
+              <div class="author">
+                <img src="~/img/member-03.jpg" alt="">
+                <span class="category">Desarrollador y Diseñador</span>
+                <h4>Carlos Marin</h4>
+              </div>
+            </div>
+
+            <div class="item">
+              <p>“Siempre me gusta inovar en algo nuevo y ostentoso y mas cuando nos ayuda a poder 
+                contribuir a la sociedad.”</p>
+              <div class="author">
+                <img src="~/img/member-01.jpg" alt="">
+                <span class="category">UI Expert</span>
+                <h4>Mariana Zavala</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 align-self-center">
+          <div class="section-heading">
+            <h6>AGRADECIMIENTOS</h6>
+            <h2>Estamos agradecidos</h2>
+            <p>Queremos agradecer publicamente a Lizethe Hernandez Licenciada en pedagogia Especial
+              y Licenciada en Psicologia infantil
+              por ayudarnos a la creaccion de este proyecto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section courses" id="courses">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Videos online</h6>
+            <h2>Videos De Apoyo</h2>
+          </div>
+        </div>
+      </div>
+      <ul class="event_filter">
+        <li>
+          <a class="is_active" href="#!" data-filter="*">Todos</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".design">Autoestima</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".development">Desarrollo Emocional</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".wordpress">Paso a Paso</a>
+        </li>
+      </ul>
+      <div class="row event_box">
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="~/img/course-01.jpg" alt=""></a>
+              <span class="category">Fase 1</span>
+              <span class="price">
+                <h6><em>#</em>01</h6>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="author">Dado por: </span>
+              <a href=https://www.youtube.com/watch?v=Vf7N6ADsmKg>
+                <h4>Inteligencia Emocional</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6  development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="~/img/course-02.jpg" alt=""></a>
+              <span class="category">Fase 1</span>
+              <span class="price">
+                <h6><em>#</em>02</h6>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="author">Dado por: hablemos con la vida</span>
+              <a href="https://www.youtube.com/watch?v=pj5brGXsAfs">
+                <h4>¿Cómo sobrevivir a una ruptura?</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design wordpress">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="~/img/course-03.jpg" alt=""></a>
+              <span class="category">fase 1</span>
+              <span class="price">
+                <h6><em>#</em>03</h6>
+              </span>
+            </div>
+            <div class="down-content">
+              <a href="https://www.youtube.com/watch?v=WvI3tnank04">
+                <span class="author">Dado por: hablemos con la vida</span>
+                <h4>¿Qué es y cómo se construye la autoestima?</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="~/img/course-04.jpg" alt=""></a>
+              <span class="category">fase 1</span>
+              <span class="price">
+                <h6><em>#</em>04</h6>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="author">Dado por: hablemos con la vida</span>
+              <a href="https://www.youtube.com/watch?v=XvuN9t2BMrE">
+                <h4>¿Cómo funciona la dependencia?</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress development">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="~/img/course-05.jpg" alt=""></a>
+              <span class="category">fase 1</span>
+              <span class="price">
+                <h6><em>#</em>05</h6>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="author">Dado por: hablemos con la vida</span>
+              <a href="https://www.youtube.com/watch?v=scamUIL1HfE">
+                <h4>Cómo se hacen los celos patológicos (Y cómo deshacerlo)</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress design">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="~/img/course-06.jpg" alt=""></a>
+              <span class="category">fase 1</span>
+              <span class="price">
+                <h6><em>#</em>06</h6>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="author">Dado por: hablemos con la vida</span>
+              <a href="https://www.youtube.com/watch?v=RAGsgaxfiMk">
+                <h4>¿Para qué sirve la frustración y cómo gestionarla?</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6  align-self-center">
+          <div class="section-heading">
+            <h6>Contactanos</h6>
+            <h2>Te contactamos enseguida</h2>
+            <p>Comunicate con nosotros y te ayudaremos lo antes posible</p>
+            <div class="special-offer">
+              <span class="offer">Off<br><em>50%</em></span>
+              <h6>Validez: <em>29 julio 2024</em></h6>
+              <h4>Oferta Especial <em>50%</em> De Descuento!</h4>
+              <a href="#"><i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-us-content">
+            <form id="contact-form" action="" method="post">
+              <div class="row">
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="name" name="name" id="name" placeholder="Tu Nombre..." autocomplete="on" required>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="text" name="email" id="email" placeholder="Tu Correo..."
+                      required="">
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <textarea name="message" id="message" placeholder="Dejanos Tu Mensaje"></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="orange-button">Enviar Mensaje Ahora</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2024 MEVAK. Todos Los Derechos Reservados.
+      </div>
+    </div>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="~/jquery/jquery.min.js"></script>
+  <script src="~/bootstrap/js/bootstrap.min.js"></script>
+  <script src="~/js/isotope.min.js"></script>
+  <script src="~/js/owl-carousel.js"></script>
+  <script src="~/js/counter.js"></script>
+  <script src="~/js/custom.js"></script>
+
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/665369359a809f19fb355918/1huqt5udr';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+</body>
